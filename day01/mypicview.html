@@ -3,18 +3,70 @@
 <head>
     <meta charset="utf-8">
     <title>image gallery</title>
+<style >
+ body {
+    font-family: Arial, Helvetica, sans-serif;
+    color:#333;
+    background-color: #ccc;
+    margin: 1em 10%;
+}
+h1{
+    color: #333;
+    background-color: transparent;
+}
+a{
+    color: #cc6600;
+    background-color: transparent;
+    font-weight: bold;
+    text-decoration: none;
+}
+ul{
+    padding: 0;
+}
+li{
+    float: left;
+    padding: 1em;
+    list-style: none;
+}
+img{
+    display: block;
+    clear: both;
+}
+
+</style>
+
+    <script>
+        function showPic(whichpic){
+           var source= whichpic.getAttribute("href");
+           var title=whichpic.getAttribute("title");
+           var placeholer= document.getElementById("placeholder");
+           placeholer.setAttribute("src",source);
+           placeholer.setAttribute("title",title);
+           var desc= document.getElementById("description");
+           desc.firstChild.nodeValue=title;
+        }
+
+        function countBodyChildren(){
+            var body_element=document.getElementsByTagName("body")[0];
+           // alert(body_element.childNodes.length);
+
+        }
+
+        window.onload=countBodyChildren;
+
+    </script>
 </head>
 
 <body>
     <h1>My Image Gallery</h1>
     <ul>
-        <li><a href="images/ben.jpg" alt="Big ben">Big ben</a></li>
-        <li><a href="images/coffee.jpg" alt="A cup ofcoffee">A cup ofcoffee</a></li>
-        <li><a href="images/firework.jpg" alt="Fireworks">Fireworks</a></li>
-        <li><a href="images/rose.jpg" alt="Red rose">Red rose</a></li>
+        <li><a href="images/ben.jpg" onclick="showPic(this); return false;" title="Big ben">Big ben</a></li>
+        <li><a href="images/coffee.jpg" onclick="showPic(this); return false;" title="A cup ofcoffee">A cup ofcoffee</a></li>
+        <li><a href="images/firework.jpg"  onclick="showPic(this); return false;" title="Fireworks">Fireworks</a></li>
+        <li><a href="images/rose.jpg" onclick="showPic(this); return false;" title="Red rose">Red rose</a></li>
     </ul>
- 
-    <img src="images/logo.png" alt="logo">
+    <img id="placeholder" src="images/logo.png" title="logo">
+    <p id="description">Choose an image...</p>
 </body>
 
 </html>
