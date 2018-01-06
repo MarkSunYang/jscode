@@ -1,27 +1,52 @@
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>singleton</title>
-    <link rel="icon" href="images/title.png" type="image/x-icon">
-    <link rel="shortcut icon" href="images/title.png" type="image/x-icon">
+    <link rel="icon" href="../images/title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/title.png" type="image/x-icon">
     <script>
 
+        /*
+        author:malik
+        date:2018-0105
+        title单例模式
+        */
 
+        /* 1.构造一个普通的对象 */
 
+        // var foo={
+        //    property1:"something",
+        //    property2:"something2",
+        //    method:function(){
+        //        console.log("hello world");
+        //    }
+        // }
+        // foo.method();
 
+        var foo = function () {
+            var privateVariable = 'private variable';
+            function showPrivate() {
+                console.log(privateVariable);
+            }
+            return {
+                publicMethod: function () {
+                    showPrivate();
+                },
+                publicVar: 'public you can see'
+            }
 
-        var foo={
-           property1:"something",
-           property2:"something2",
-           method:function(){
-               console.log("hello world");
-           }
         }
+        var result = foo();
+        result.publicMethod();
+        console.log( result.publicVar);
 
     </script>
-</head>  
+</head>
+
 <body>
 
 
 </body>
+
 </html>
