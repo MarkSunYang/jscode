@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <link rel="icon" href="images/title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/title.png" type="image/x-icon">
+    <title></title>
+    <script>
+/*
+公有方法的调用规则
+*/
+
+
+function User(){
+    this.myname='malik';
+    this.age=28;
+    this.study=function(){
+        console.log("good good study");
+    }
+}
+
+
+//静态方法
+User.eat=function(food){
+    console.log("晚上吃"+food);
+}
+
+User.prototype.Introduce=function(){
+    User.eat("duck");
+    console.log(this.study());
+}
+
+var user=new User();
+// User.eat("chicken");//静态方法
+//  user.study();//公有方法
+ user.Introduce();//
+
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <link rel="icon" href="../images/title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/title.png" type="image/x-icon">
+    <title></title>
+    <script>
+
+        /*
+        1.用new关键字创建对象
+        */
+        //var person1=new Person();
+
+        /*
+        使用字面量创建
+        */
+        var person2 = {
+            name: 'malik',
+            major: 'tec',
+            introduce: function () {
+                console.log('Hello');
+            }
+        }
+
+        /*
+        工厂模式
+        */
+        function createPeople(name, major) {
+            var o = new Object();
+            o.name = name;
+            o.major = major;
+
+            o.introduce = function () {
+               // console.log(this.name + "  ,hello");
+            }
+            return o;//返回了一个对象
+        }
+        var person3 = createPeople("mark", 26)
+
+        /*
+        构造函数
+        */
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.sayHello=sayHello;
+        }
+
+        function sayHello(){
+            console.log("hello");
+        }
+        var person4=new Person();
+        person4.sayHello();
+
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

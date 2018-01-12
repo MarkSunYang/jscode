@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <link rel="icon" href="../images/title.png" type="image/x-icon">
+    <title></title>
+    <script>
+        /*
+        构造函数：
+        使自己的对象多次复制，
+        同时实例根据设置的访问等级尅访问其他的内部属性和方法
+        当对象被实例化后，构造函数会立即执行它包含的任何代码
+        */
+        function myObj(msg) {
+           
+            //公有属性
+            this.msg = msg;
+            this.address = 'ShangHai';
+
+            //私有属性
+            var name = 'mailk';
+            var age = '28';
+      
+        }
+
+        /*
+        继承属性
+        */
+        function Person() {
+
+        }
+var person=new Person();
+console.log(person.__proto__===Person.prototype)
+console.log(Person === Person.prototype.constructor);  
+/*
+方法继承
+*/
+
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

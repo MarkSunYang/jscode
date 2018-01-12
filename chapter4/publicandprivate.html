@@ -1,0 +1,89 @@
+<html>
+
+<head>
+    <link rel="icon" href="images/title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/title.png" type="image/x-icon">
+    <title></title>
+    <script>
+
+        /*
+        公有、私有、静态属性和方法详解
+
+        静态方法：无需实例化就可以调用的方法
+        */
+
+        function User(name, age) {
+
+            //1、公有属性和方法
+            this.name = name;
+            this.age = age;
+            
+            this.carlinence="苏0001";
+            var idnumber="32091111";
+
+            //2.私有属性和方法
+            var privateName = name;
+
+            //3.私有方法
+            function logName() {
+                //console.log(privateName);
+            }
+            logName();
+
+            //7.特权方法的作用：能够在构造函数外面访问，能够访问私有成员和方法
+            //和公有方法的区别
+            this.getID = function () {
+                console.log(this.carlinence);
+                console.log(idnumber);
+            }
+
+        }
+
+        var user = new User();
+        user.getID();
+
+        //4.公有方法
+        User.prototype.getName = function () {
+            console.log(this.name);
+        }
+
+        function Person() { }
+
+        //5.静态属性
+        Person.name = "malik";
+
+        //6.静态方法
+        Person.getName = function () {
+
+        }
+
+        //8.静态类  不需要去用new 
+        var dog={
+            init:function(name,age){
+                this.name=name;
+                this.age=age;
+            },
+            getName:function(){
+                return this.name;
+            }
+        }
+
+        dog.init('dog',27);
+        console.log(dog.getName());
+
+
+/*
+调用规则
+1.公有方法要先实例化
+2.
+*/
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

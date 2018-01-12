@@ -1,47 +1,112 @@
 <html>
+
 <head>
-        <link rel="icon" href="images/title.png" type="image/x-icon">
-        <link rel="shortcut icon" href="images/title.png" type="image/x-icon">
+    <link rel="icon" href="../images/title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/title.png" type="image/x-icon">
     <title></title>
     <script>
 
-/*
-定义基本类型和引用类型的方式是类似的。。。
-创建一个变量并为该变量赋值
-*/
+        /*
+        定义基本类型和引用类型的方式是类似的。。。
+        创建一个变量并为该变量赋值
+        */
 
-// var person=new Object();//创建对象
-// person.name="mailk";//赋值
+        // var person=new Object();//创建对象
+        // person.name="mailk";//赋值
 
-// var num1=5;
-// var num2=num1;
+        // var num1=5;
+        // var num2=num1;
 
-// var obj1=new Object();
-// var obj2=obj1;
-// obj1.name="mailk";
-// alert(obj2.name);
+        // var obj1=new Object();
+        // var obj2=obj1;
+        // obj1.name="mailk";
+        // alert(obj2.name);
 
-// function addTen(num){
-//     num+=10;
-//     return num;
-// }
+        // function addTen(num){
+        //     num+=10;
+        //     return num;
+        // }
 
-// var count=20;
-// var result=addTen(count);
-// alert(count);
+        // var count=20;
+        // var result=addTen(count);
+        // alert(count);
 
-function setName(obj){
-    obj.name="Nicholas";
-}
+        // function setName(obj){
+        //     obj.name="Nicholas";
+        // }
 
-var person=new Object();
-setName(person);
-alert(person.name);
+        // var person=new Object();
+        // setName(person);
+        // alert(person.name);
+
+        /*
+        动态属性
+        */
+
+
+        // function Animal(name){
+        //     var className="Animal";//私有属性，只能在内部访问
+        //     this.name=name;
+        //     this.hello=function(){
+        //      //   console.log(this.name);
+        //         //console.log(this.msg());//使用原型方法扩充的方法可以在类内部使用
+        //       //  console.log(this.sex);//使用原型方法扩充的属性可以在类内部使用
+        //        // console.log(Animal.age);//静态属性调用格式为[对象.静态属性]
+
+        //     console.log(this.msg());
+        //     }
+        // }
+
+        // Animal.Run=function(){
+        //     console.log("animal run");
+        // }
+
+        // Animal.prototype.msg=function(){
+        //     console.log("my name is "+ Animal.name);//无法被调用
+        // }
+
+
+        // Animal.age=20;//公有静态属性 在类的外部  
+        // Animal.prototype.sex="unknow"; //原型属性，当作是类内部的属性使用【this.原型属性】
+
+        // Animal.Run();//类方法也是静态方法，可以直接使用
+        // Animal.prototype.msg();//原型方法当成静态方法使用
+        // console.log(Animal.prototype.sex);
+
+        // var animal=new Animal("dog");
+        // animal.hello();
+
+
+        // Animal.age=10;
+        // Animal.prototype.msg="hello my name is animal";
+
+
+        /*
+        new 关键字
+        1.创建一个新的对象，这个对象类型是object
+        2.设置这个对象的内部、可访问型、[[propertype]]属性为够着函数
+        3.执行构造函数
+        */
+
+        function Animal(name) {
+            this.name = name;
+            
+        }
+
+        Animal.prototype.run=function(){
+            console.log(this.name+" run");
+        }
+
+        var dog=new Animal("dog");
+        dog.run();
+
 
     </script>
-</head>  
+</head>
+
 <body>
 
 
 </body>
+
 </html>

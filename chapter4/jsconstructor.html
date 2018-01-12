@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <link rel="icon" href="../images/title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/title.png" type="image/x-icon">
+    <title></title>
+    <script>
+
+
+        /*
+        1.什么是构造函数 用new关键字来调用定义的构造函数。默认返回的是一个新对象，这个新对象具有构造函数定义的变量和函数/方法。
+        2.构造函数和普通函数的区别
+        3.new关键字做了什么
+        ｛
+            1.创建一个空对象
+            2.将构造函中的this指向对象
+            3.建立原型关系
+            4.执行代码
+        ｝
+        4.构造函数能当普通函数调用吗
+        */
+
+
+        //this 永远指向当前在被执行的函数或者方法的owner
+
+        function testthis() {
+            console.log(this);
+        }
+        testthis();
+
+/*
+1.全局中调用
+2.函数调用
+3.对象的方法调用
+4.调用构造函数
+*/
+
+/*
+call 和replay
+*/
+
+
+/*
+普通函数和构造函数的对比
+1.不需要new关键字调用
+2.可以用renturn语句返回
+*/
+function fn(){
+}
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>
