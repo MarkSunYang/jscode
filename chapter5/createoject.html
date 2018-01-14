@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <link rel="icon" href="../images/title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/title.png" type="image/x-icon">
+    <title></title>
+    <script>
+      
+//1.new 关键字创建
+var person=new Object();
+person.name="malik";
+person.age=27;
+
+//2.对象字面量
+var person1={
+name:"mark",
+age:28
+};
+
+
+function displayInfo(args){
+    var output="";
+    if(typeof args.name=="string"){
+        output+="name:"+args.name+"\n";
+    }
+    if(typeof args.age=="number"){
+        output+="age:"+args.age+"\n";
+    }
+    console.log(output);
+}
+
+
+displayInfo({
+    name:"mailk",
+    age:29
+});
+
+displayInfo({
+    name:"mailk"
+});
+      
+    </script>
+</head>
+
+<body>
+
+
+</body>
+</html>

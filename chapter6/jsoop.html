@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <link rel="icon" href="../images/title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/title.png" type="image/x-icon">
+    <title></title>
+    <script>
+
+        //1.创建一个perosn对象
+
+        var person = {
+            name: "mailk",
+            age: 27,
+            introduce: function () {
+                console.log("hello");
+            }
+        };
+
+        /*
+            数据属性：        
+            //2.特性 attribute  描述了 属性的特征 property
+            //数据的四个特性
+            //1.[[configurable]] 能否通过delete删除属性从而定义属性
+            
+             [[Enumerable]] 能否通过for-in循环返回属性
+             
+             [[writabe]] 能否修改属性的值
+             
+             [[value]] 包含这个属性的数据
+        */
+
+        var person = {};
+        Object.defineProperty(person, "name", {
+            configurable: true,//不能删除
+            writable: true,//默认是false
+            value: "mark"
+        });
+        console.log(person.name);
+        person.name = "mailk";
+        delete person.name;
+        console.log(person.name);
+
+
+        /*
+        访问属性器属性不包含数据值，它们包含一对getter和setter
+        [[configuration]]delete
+        [[Enumberable]] for-in
+        [[get]]
+        [[set]]
+        访问其属性必须通过defineProperty()定义
+        */
+
+        var book = {
+            _year=2017,
+            edition: 1
+        };
+
+        Object.defineProperty(book,"year",{
+           get:function(){
+               return this._year;
+           }, 
+           set:function(newVaule){
+            this._year=newVaule;
+            this.edition+=newVaule-2017;
+           }
+        });
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

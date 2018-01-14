@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <link rel="icon" href="../images/title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/title.png" type="image/x-icon">
+    <title></title>
+    <script>
+
+        /*
+        1.工厂模式
+        */
+        function createPerson(name, age) {
+            var person = new Object();
+            o.name = name;
+            o.age = age;
+
+            o.sayHello = function () {
+                console.log("hello");
+            }
+            return o;
+        }
+
+        /*
+        1.构造函数模式
+        */
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            this.sayHello = function () {
+                console.log("hello");
+            }
+        }
+//调用方式
+//1.当作构造函数使用
+var person1=new Person("mark",27,"SSE");
+person1.sayHello();
+//2.作为普通函数调用
+Person("mailk",27);//添加到了window
+window.sayHello();
+//在另一个对象的作用域中调用
+var o=new Object();
+Person.call("dame",28);
+o.sayHello();
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>

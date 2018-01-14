@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <link rel="icon" href="../images/title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/title.png" type="image/x-icon">
+    <title></title>
+    <script>
+
+/*
+原型链：
+创建连个类型 SuperType SubType
+每个属性分别有一个属性和方法
+SubType继承了SubType
+继承是通过创建SuperType的实例，并将该实例付给SubType的原型
+实现的本质撕重写原型对象，代之以一个新的实例
+存在supertype中的实例
+*/
+
+function SuperType(){
+    this.property=true;
+}
+
+SuperType.property.getSuperValue=function(){
+    return this.property;
+}
+function SubType(){
+    this.subproperty=false;
+}
+SubType.prototype=new SubType();
+SubType.prototype.getSubVaule=function(){
+    return this.subproperty;
+}
+var instance=new SubType();
+console.log(instance.getSuperValue());
+
+      
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
