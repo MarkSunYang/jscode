@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <link rel="icon" href="../images/title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/title.png" type="image/x-icon">
+    <title></title>
+    <script>
+
+        function factorial(num) {
+            //小于等于该数字之前的乘积
+            if (num == 1) {
+                return 1;
+            } else {
+                //console.log(arguments.callee())   ;
+                return num * factorial(num - 1);
+
+            }
+            console.log(arguments.callee);
+        }
+
+        //
+        // arguments.callee指向正在执行的函数
+
+        console.log(factorial(3));
+        console.log(factorial(4));
+
+
+        /*
+        匿名函数和闭包
+        闭包：有权限访问另一个函数作用域的变量的函数
+        
+        活动对象：一个函数在被创建的时候，会创建一个活动对象，首先，回将该对象的形参和实参都添加为该活动对象的
+        属性和值，将该函数体内显示为声明的变量和函数，也添加为活动的属性
+        
+        */
+
+        function Father() {
+            var name = "Father";
+            function Son() {
+                var name = "Son";
+                console.log(name);
+            }
+            Son();
+        }
+        var f = Father();
+
+        function createFunction() {
+            var resulst = new Array();
+            for (var i = 0; i < 10; i++) {
+                result[i] = function () {
+                    return i;
+                }
+            }
+            return resulst;
+        }
+
+          var name="this window";
+          var obj={
+              name:"this obj",
+              getNameFun:function(){
+                  var that =this;
+                return function(){
+                    console.log(that.name);
+                }
+              }
+
+          }
+
+          obj.getNameFun()();
+
+
+        // var name = 'globalName';
+        // function funcA() {
+        //     console.log(name);//undefined
+        //     var name = 'funAName';
+        //     console.log(name);//funAName
+        //     console.log(age);//not defined
+        // }
+        // funcA();
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
