@@ -1,0 +1,84 @@
+1.作用域
+1.1 函数作用域
+js的作用域不是以花括号包围的块级作用域(block scope),
+
+if(true){
+    var somevar='value';
+}
+console.log(somevar)
+//在js是正确的 输出是value
+
+函数作用域
+在一个函数中定义的变量只对这个函数内部可见，我们成为函数作用域，在函数中引用一个变量，
+在函数中引用一个变量，js会首先搜索当前函数作用域，或者称为 局部作用域，如果没有找到则搜索上层作用域，
+一直到全乎作用域
+var v1='v1';
+
+var f1=function(){
+    console.log(v1);
+}
+f1();
+
+var f2=function(){
+    var v1='local';
+    console.log)(v1)
+}
+
+栗子2：
+
+var scope='global';
+var f=function(){
+    console.log(scope);
+    var scope='f';
+}
+f();//输出undefined
+原因：js按照作用域搜索，在console.lgo函数访问scope变量，js首先会搜索f的作用域
+恰巧f作用域找到scope变量，所以全局的scope就被平板了，但是执行这句话，scope还没初始化
+var f=function(){
+    var scope='f0';
+    (function(){
+        var scope='f1';
+        (function(){
+            console.log(scope);//输f1，虽然没做实验，但是我深信不疑
+        })
+    })
+}
+详情见 通俗易懂 
+http://blog.csdn.net/wrian_ban/article/details/51601733
+
+全局作用域：
+1).在最外层定义的变量
+2).全局对象的属性
+3).任何地方隐式定义的变量
+
+2.闭包
+闭包 closure是函数式编程中的概念
+
+2.1什么是闭包？
+var fun=function(){
+    var count=0;
+    var get=function(){
+        count++;
+        return count;
+    }
+    return get;
+}
+
+var counter=fun();
+counter();//1
+counter();//2
+counter();//3
+
+fun()函数中有一个局部变量count，初始值为0，还有一个叫get的函数，
+get将其父亲作用域，也就是fun()函数中的count变量增加1，并返回count的值
+
+
+
+
+1.2 全局作用域
+
+
+2.闭包
+
+
+3.对象

@@ -1,0 +1,36 @@
+模块和包是nodejs的重要支柱，
+
+1.创建包
+包是模块基础上更深一步的抽象，nodejs的包类似于c/c++的函数，或者java.net
+的类库，
+规范：
+1).package.json必须在包的顶层目录下
+2).二进制文件该在bin目录下
+3).js代码该在lib目录下
+4).文档应该在doc下
+5).单元测试该在test目录下
+
+2.作为文件夹的模块
+模块与文件是一一对应的饿，文件不仅可以是js嗲吗或者二进制代码，
+还可以是一个文件夹，
+
+package.json的字段
+name：包的名称，必须是唯一的
+description：包的简要说明
+version： 符合语意化版本识别的规范的版本字符串
+keywords：关键字数组，通常用于搜索
+maintainers: 维护者数组，每个元素包含 name, email,web(可选)
+。。。好懒不想写了
+
+
+
+nodejs包管理器
+
+npm [install/i] [package_name] 本地模式当前文件夹
+
+本地模式和全局模式
+
+npm [install/i] -g [package_name] 
+
+创建全局链接：全局模式安装的包不能直接通过 require 使用
+但通过npm link命令可以打破这个限制
