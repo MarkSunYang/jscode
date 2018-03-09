@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <link rel="icon" href="../images/title.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/title.png" type="image/x-icon">
+    <title></title>
+    <script>
+
+//创建函数，并创建一个prototype属性，这个属性指向函数的原型对象
+        function Person() {
+
+        }
+
+        Person.prototype.name = "mailk";
+        Person.prototype.age = 27;
+        Person.prototype.sayName = function () {
+            console.log("Hello");
+        };
+
+        var person1=new Person();
+        var person2=new Person();
+
+console.log(person1.name);
+console.log(person2.name);
+person1.name="mark";
+
+console.log(person1.hasOwnProperty("name"));
+console.log(person2.hasOwnProperty("name"));
+console.log(person1.name);//来自实例
+delete person1.name;
+console.log(person1.name);//来自原型
+console.log(person2.name);//来自原型
+
+//通过 hasOwnProperty()
+
+
+//上述方法谢了~~
+function Animal(){
+
+}
+Animal.prototype={
+    name:"mark",
+    age:29,
+    job:"SSE",
+    introduce:function(){
+        console.lgo(this.name);
+    }
+};
+
+
+    </script>
+</head>
+
+<body>
+
+
+</body>
+
+</html>
